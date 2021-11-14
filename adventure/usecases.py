@@ -50,5 +50,7 @@ class StopJourney:
         if not journey:
            raise StopJourney.CantStop("can't stop journey")
 
+        self.notifier.send_notifications_stop_journey(journey)
+
     class CantStop(Exception):
         pass
